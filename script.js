@@ -117,11 +117,11 @@
       if(flag0==1){
       tick1()
       }else{
-        var score=world.distanceTravelled%100
+        var score=Math.floor(Math.round(world.distanceTravelled/100))
         console.log(score) 
         var HighScore = localStorage.getItem("HighScore");
         if(HighScore==null){HighScore=score}
-        if(score>HighScore){
+        if(score>=HighScore){
         localStorage.setItem("HighScore",score);
         }
         ctx.font = "26px Arial";
